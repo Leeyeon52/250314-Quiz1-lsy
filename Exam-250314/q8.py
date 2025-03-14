@@ -21,11 +21,11 @@ def main():
     Scatter 그래프 그리기
     """
     
-    colors = np.random.randint(0,100,500)
+    colors = np.random.randint(0, 100, len(data_x))
     
     # figure의 (0,0) 위치에 scatter 그래프를 그립니다.
     # x 데이터는 data_x, y 데이터는 data_y, 데이터 포인트의 색깔은 colors, 사이즈는 2, 투명도는 0.7로 설정합니다.
-    axes[0,0].scatter(data_x, data_x, c=colors, s=2, alpha=0.7)
+    axes[0,0].scatter(data_x, data_y, c=colors, s=2, alpha=0.7)
     axes[0,0].set_title('Scatter Plot')
     
     """
@@ -51,7 +51,7 @@ def main():
 
     x_ax =  np.arange(3)
     
-    for i in x_ax:
+    for i in range(len(data1)):
         # figure의 (1,0) 위치에 Bar 그래프를 그립니다.
         # x 데이터는 x_ax, y 데이터는 각각 x,y,z로 설정합니다.
         axes[1, 0].bar(x_ax, data1[i], bottom=np.sum(data1[:i], axis=0))
@@ -59,7 +59,7 @@ def main():
     # figure의 (1,0) 위치에서 x축 데이터를 병렬적으로 설정합니다.
     axes[1,0].set_xticks(x_ax)
     # figure의 (1,0) 위치에서 x축 label을 'A', 'B', 'C'로 설정합니다.
-    axes[1,0].set_xticklabels('A', 'B', 'C')
+    axes[1,0].set_xticklabels(['A', 'B', 'C'])
     
     """
     Histogram 그래프 그리기
