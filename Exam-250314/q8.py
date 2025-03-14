@@ -54,7 +54,7 @@ def main():
     for i in range(len(data1)):
         # figure의 (1,0) 위치에 Bar 그래프를 그립니다.
         # x 데이터는 x_ax, y 데이터는 각각 x,y,z로 설정합니다.
-        axes[1, 0].bar(x_ax, data1[i], bottom=np.sum(data1[:i], axis=0))
+        axes[1, 0].bar(x_ax, data1[i], bottom=np.sum(data1[:i], axis=0), label=f"Set {i+1}")
         
     # figure의 (1,0) 위치에서 x축 데이터를 병렬적으로 설정합니다.
     axes[1,0].set_xticks(x_ax)
